@@ -3,6 +3,7 @@ const BACK = "cardBack";
 const CARD = "card";
 const ICON = "icon";
 
+
 startGame();
 
 function startGame() {
@@ -58,6 +59,7 @@ function flipCard() {
     if (game.secondCard) {
       if (game.checkMatch()) {
         game.clearCards();
+        currentScore();
         if (game.checkGameOver()) {
           setTimeout(() => {
             let gameOverLayer = document.getElementById('gameOver');
@@ -72,6 +74,7 @@ function flipCard() {
           firstCardView.classList.remove('flip');
           secondCardView.classList.remove('flip');
           game.unflipCards();
+          currentScore();
         }, 1000);
       };
     }
@@ -79,8 +82,40 @@ function flipCard() {
 }
 
 function restart() {
+  checkBestScore();
+  resetCurrentScore();
   game.clearCards();
   startGame();
   let gameOverLayer = document.getElementById('gameOver');
   gameOverLayer.style.display = 'none';
+}
+
+function currentScore() {
+  let currentScore = document.getElementById('currentScore');
+  let bestScore = document.getElementById('bestScore');
+  currentScore.setAttribute('value', parseInt(currentScore.value) + 1);
+
+  if (bestScore.value != 0
+    && parseInt(currentScore.value) > parseInt(bestScore.value)) {
+    currentScore.setAttribute('style', 'color: red');
+  }
+}
+
+function resetCurrentScore() {
+  let currentScore = document.getElementById('currentScore');
+  currentScore.setAttribute('value', 0);
+  currentScore.setAttribute('style', 'color: black');
+}
+
+function checkBestScore() {
+  let bestScore = document.getElementById('bestScore');
+  let currentScore = document.getElementById('currentScore');
+
+  if (bestScore.value == 0) {
+    bestScore.setAttribute('value', currentScore.value)
+  }
+
+  if (currentScore.value <= bestScore.value) {
+    bestScore.setAttribute('value', currentScore.value);
+  }
 }

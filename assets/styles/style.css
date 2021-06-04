@@ -50,6 +50,42 @@ body{
   font-size: 30px;
 }
 
+#score {
+  text-align: center;
+  margin-left: 40px;
+  border-radius: 10px;
+  background-color: #b3b8bd;
+  padding:10px;
+}
+
+.scoreHeader{
+  font-size: 1.2rem;
+  padding:5px;
+
+}
+
+#scoreTable {
+  text-align: center;
+  border-spacing: 5px;
+
+}
+
+#scoreTable th, td {
+  padding: 8px;
+  background-color: #a6e0f1;
+  border-radius: 4px;
+}
+
+
+#bestScore, #currentScore {
+  text-align: center;
+  background-color: #a6e0f1;
+  width: 80px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
 #gameOver{
   position: absolute;
   top: 0;
@@ -84,4 +120,8 @@ body{
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
   gap: 20px;
+}
+
+.red{
+  color: red;
 }
