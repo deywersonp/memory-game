@@ -16,24 +16,21 @@
   <div id="gameBoard">
   </div>
 
-  <div id="score">
-    <table id="scoreTable">
-      <caption class="scoreHeader">Número de Jogadas</caption>
-      <tr>
-        <td>Best Score</td>
-        <td>Atual</td>
-      </tr>
-      <tr>
-        <td>
-          <input id="bestScore" style="color:black" disabled="true" value="0">
-        </td>
-        <td>
-          <input id="currentScore" style="color:black" disabled="true" value="0">
-        </td>
-      </tr>
-    </table>
-  </div>
+  <div id="scoreContainer">
+    <div id="score">
 
+      <h3>Número Total de Jogadas</h3>
+      <div class=bestScore>
+        <p>Best Score</p>
+        <input id="bestScoreInput" style="color:black" disabled="true" value="0">
+      </div>
+
+      <div class="currentScore">
+        <p>Atual</p>
+        <input id="currentScoreInput" style="color:black" disabled="true" value="0">
+      </div>
+    </div>
+  </div>
 
 
   <div id="gameOver">

@@ -91,31 +91,31 @@ function restart() {
 }
 
 function currentScore() {
-  let currentScore = document.getElementById('currentScore');
-  let bestScore = document.getElementById('bestScore');
-  currentScore.setAttribute('value', parseInt(currentScore.value) + 1);
+  let currentScoreInput = document.getElementById('currentScoreInput');
+  let bestScoreInput = document.getElementById('bestScoreInput');
+  currentScoreInput.setAttribute('value', parseInt(currentScoreInput.value) + 1);
 
-  if (bestScore.value != 0
-    && parseInt(currentScore.value) > parseInt(bestScore.value)) {
-    currentScore.setAttribute('style', 'color: red');
+  if (bestScoreInput.value != 0
+    && parseInt(currentScoreInput.value) > parseInt(bestScoreInput.value)) {
+    currentScoreInput.setAttribute('style', 'color: red');
   }
 }
 
 function resetCurrentScore() {
-  let currentScore = document.getElementById('currentScore');
-  currentScore.setAttribute('value', 0);
-  currentScore.setAttribute('style', 'color: black');
+  let currentScoreInput = document.getElementById('currentScoreInput');
+  currentScoreInput.setAttribute('value', 0);
+  currentScoreInput.setAttribute('style', 'color: black');
 }
 
 function checkBestScore() {
-  let bestScore = document.getElementById('bestScore');
-  let currentScore = document.getElementById('currentScore');
+  let bestScoreInput = document.getElementById('bestScoreInput');
+  let currentScoreInput = document.getElementById('currentScoreInput');
 
-  if (bestScore.value == 0) {
-    bestScore.setAttribute('value', currentScore.value)
+  if (bestScoreInput.value == 0) {
+    bestScoreInput.setAttribute('value', currentScoreInput.value)
   }
 
-  if (currentScore.value <= bestScore.value) {
-    bestScore.setAttribute('value', currentScore.value);
+  if (currentScoreInput.value <= bestScoreInput.value) {
+    bestScoreInput.setAttribute('value', currentScoreInput.value);
   }
 }
