@@ -75,7 +75,7 @@ function flipCard() {
           secondCardView.classList.remove('flip');
           game.unflipCards();
           currentScore();
-        }, 1000);
+        }, 500);
       };
     }
   }
